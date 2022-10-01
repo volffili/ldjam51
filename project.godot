@@ -40,7 +40,7 @@ down={
 window/size/viewport_width=640
 window/size/viewport_height=480
 window/size/mode=4
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [input]
 
@@ -80,3 +80,7 @@ shoot={
 
 2d/default_gravity_vector=Vector2(0, 0)
 2d/default_linear_damp=0.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
