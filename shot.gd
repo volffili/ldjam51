@@ -3,6 +3,8 @@ extends RigidBody2D
 var point_light_scene = preload("res://point_light.tscn")
 var boom_scene = preload("res://boom.tscn")
 
+signal impact
+
 var damage = 10
 var speed = 500
 var my_point_light
@@ -24,6 +26,7 @@ func _on_shot_body_entered(body):
 	boom.position = position
 	get_parent().add_child(boom)
 	queue_free()
+	emit_signal("impact", self, body)
 
 func _on_collision_shape_2d_tree_exited():
 	my_point_light.clear_assigned()

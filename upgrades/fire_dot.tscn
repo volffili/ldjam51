@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://clkqn6f2bhe1m"]
+
+[ext_resource type="PackedScene" uid="uid://c7qten550w4hb" path="res://upgrades/damage.tscn" id="1_ywtjr"]
+[ext_resource type="Script" path="res://upgrades/fire_dot.gd" id="2_xyxai"]
+
+[node name="upgrade" instance=ExtResource("1_ywtjr")]
+script = ExtResource("2_xyxai")

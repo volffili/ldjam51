@@ -87,4 +87,6 @@ shoot={
 
 [rendering]
 
+limits/opengl/max_renderable_lights=128
+limits/opengl/max_lights_per_object=128
 textures/canvas_textures/default_texture_filter=0
