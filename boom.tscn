@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4fydoc7q8356"]
+[gd_scene load_steps=6 format=3 uid="uid://d4fydoc7q8356"]
 
 [ext_resource type="Material" uid="uid://xpx417mbvr45" path="res://shot_boom_particle.tres" id="1_5p80j"]
 [ext_resource type="Script" path="res://boom.gd" id="2_6yjjb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fjq8n"]
+light_mode = 1
 
 [sub_resource type="Animation" id="Animation_b0eal"]
 resource_name = "die"
@@ -26,6 +29,7 @@ _data = {
 }
 
 [node name="boom" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_fjq8n")
 emitting = false
 amount = 50
 lifetime = 0.5

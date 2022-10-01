@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=14 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://snoggehctvrd" path="res://upgrades/fire_rate.tscn" id="7_t1fb3"]
 [ext_resource type="PackedScene" uid="uid://clkqn6f2bhe1m" path="res://upgrades/fire_dot.tscn" id="8_jdi01"]
 [ext_resource type="PackedScene" uid="uid://c7qten550w4hb" path="res://upgrades/damage.tscn" id="8_lg65u"]
+[ext_resource type="PackedScene" uid="uid://biu3kl5mrykfv" path="res://upgrades/impact.tscn" id="9_186a7"]
+[ext_resource type="PackedScene" uid="uid://hjnuukwf8ij3" path="res://upgrades/mouse_homing.tscn" id="10_tjx0s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
 radius = 19937.1
@@ -142,8 +144,11 @@ other_upgrade = NodePath("../fire_rate")
 
 [node name="fire_dot" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("8_jdi01")]
 position = Vector2(246, 275)
-other_upgrade = NodePath("../fire_rate2")
+other_upgrade = NodePath("../impact")
 
-[node name="fire_rate2" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("7_t1fb3")]
-position = Vector2(327, 275)
+[node name="impact" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("9_186a7")]
+position = Vector2(332, 275)
 other_upgrade = NodePath("../fire_dot")
+
+[node name="impact2" parent="." instance=ExtResource("10_tjx0s")]
+position = Vector2(246, 485)
