@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://67xb8npteuy"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7ydma"]
-[ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="2_nqfcf"]
+[ext_resource type="Texture2D" uid="uid://bmpuicpqufk6n" path="res://sprites/player.png" id="2_7h66h"]
 [ext_resource type="Texture2D" uid="uid://bprmw1e3il1ct" path="res://light.png" id="3_83oed"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wu6a8"]
@@ -81,8 +81,7 @@ floor_block_on_wall = false
 script = ExtResource("1_7ydma")
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_nqfcf")
+texture = ExtResource("2_7h66h")
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wu6a8")
