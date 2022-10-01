@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4x181naf4jx2"]
+[gd_scene load_steps=11 format=3 uid="uid://c4x181naf4jx2"]
 
 [ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="1_1dusm"]
 [ext_resource type="Script" path="res://shot.gd" id="1_qojlr"]
@@ -64,6 +64,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GpuParticles2d:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_o1f60"]
 length = 0.001
@@ -91,6 +103,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GpuParticles2d:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mipm3"]
 _data = {
@@ -98,6 +122,25 @@ _data = {
 "hit": SubResource("Animation_hg5hj"),
 "start": SubResource("Animation_qqjyp")
 }
+
+[sub_resource type="Gradient" id="Gradient_ctfej"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2wlo6"]
+gradient = SubResource("Gradient_ctfej")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l6wnk"]
+emission_shape = 2
+emission_sphere_radius = 7.31
+particle_flag_disable_z = true
+spread = 19.64
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_2wlo6")
+turbulence_noise_strength = 5.37
 
 [node name="Shot" type="RigidBody2D"]
 collision_layer = 4
@@ -121,5 +164,11 @@ autoplay = "start"
 libraries = {
 "": SubResource("AnimationLibrary_mipm3")
 }
+
+[node name="GpuParticles2d" type="GPUParticles2D" parent="."]
+amount = 30
+lifetime = 0.5
+visibility_rect = Rect2(-200, -200, 400, 400)
+process_material = SubResource("ParticleProcessMaterial_l6wnk")
 
 [connection signal="body_entered" from="." to="." method="_on_shot_body_entered"]

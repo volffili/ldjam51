@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+var shot_scene = preload("res://shot.tscn")
 const SPEED = 300.0
+const RELOAD_TIME = 0.3
+var reload_time_left = 0
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -14,3 +17,15 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+	
+func _process(delta):
+	reload_time_left -= delta
+	if Input.is_action_pressed("shoot") and reload_time_left <= 0:
+		shoot()
+		reload_time_left = RELOAD_TIME
+		
+func shoot():
+	var shot = shot_scene.instantiate()
+	shot.position = position
+	get_parent().add_child(shot)
+	shot.shoot(get_viewport().get_mouse_position() - global_position)
