@@ -1,5 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bahkgg6ob7qhb"]
 
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="1_ku7ml"]
+[ext_resource type="PackedScene" uid="uid://cxmnvkr3liji2" path="res://player.tscn" id="2_c2ayt"]
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="PackedScene" uid="uid://c4x181naf4jx2" path="res://shot.tscn" id="2_udiyk"]
 
@@ -39,6 +41,8 @@ gravity = 20.0
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
 shape = SubResource("CircleShape2D_qwfva")
 
+[node name="player" parent="." instance=ExtResource("2_c2ayt")]
+position = Vector2(833, 445)
 [node name="Shot" parent="." instance=ExtResource("2_udiyk")]
 position = Vector2(184, 316)
 
