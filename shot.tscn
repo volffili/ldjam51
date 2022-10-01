@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4x181naf4jx2"]
+[gd_scene load_steps=9 format=3 uid="uid://c4x181naf4jx2"]
 
 [ext_resource type="Script" path="res://shot.gd" id="1_qojlr"]
 [ext_resource type="Material" uid="uid://dcwsir8x7cj8e" path="res://shot_particle.tres" id="3_diu87"]
@@ -50,6 +50,9 @@ _data = {
 "start": SubResource("Animation_qqjyp")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sor1f"]
+light_mode = 1
+
 [node name="Shot" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 2
@@ -70,6 +73,7 @@ libraries = {
 }
 
 [node name="GpuParticles2d" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_sor1f")
 amount = 100
 lifetime = 0.2
 visibility_rect = Rect2(-200, -200, 400, 400)

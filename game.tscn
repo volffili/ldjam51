@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=12 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://17uy3mqeeg44" path="res://bg.png" id="4_ry685"]
 [ext_resource type="PackedScene" uid="uid://cqar6qexw4tfr" path="res://tree.tscn" id="5_rcm2d"]
 [ext_resource type="PackedScene" uid="uid://snoggehctvrd" path="res://upgrades/fire_rate.tscn" id="7_t1fb3"]
+[ext_resource type="PackedScene" uid="uid://clkqn6f2bhe1m" path="res://upgrades/fire_dot.tscn" id="8_jdi01"]
 [ext_resource type="PackedScene" uid="uid://c7qten550w4hb" path="res://upgrades/damage.tscn" id="8_lg65u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
@@ -23,7 +24,9 @@ void fragment(){
   c = vec4( round(c.r), round(c.g), round(c.b), round(c.a) );
   c /= 20.0;
   COLOR = c;
-}"
+}
+
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1yht2"]
 shader = SubResource("Shader_b3mk2")
@@ -136,3 +139,11 @@ other_upgrade = NodePath("../damage")
 [node name="damage" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("8_lg65u")]
 position = Vector2(248, 358)
 other_upgrade = NodePath("../fire_rate")
+
+[node name="fire_dot" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("8_jdi01")]
+position = Vector2(246, 275)
+other_upgrade = NodePath("../fire_rate2")
+
+[node name="fire_rate2" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("7_t1fb3")]
+position = Vector2(327, 275)
+other_upgrade = NodePath("../fire_dot")
