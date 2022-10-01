@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal impact
+
 var damage = 10
 var speed = 500
 
@@ -11,3 +13,4 @@ func _on_shot_body_entered(body):
 	body.hit(damage)
 	$CollisionShape2d.set_deferred("disabled", true)
 	$AnimationPlayer.play("hit")
+	emit_signal("impact", self, body)

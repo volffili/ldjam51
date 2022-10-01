@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+signal shot_created
+
 var shot_scene = preload("res://shot.tscn")
 const SPEED = 300.0
-const RELOAD_TIME = 0.3
+var reload_time = 0.3
 var reload_time_left = 0
 
 func _physics_process(delta):
@@ -22,10 +24,11 @@ func _process(delta):
 	reload_time_left -= delta
 	if Input.is_action_pressed("shoot") and reload_time_left <= 0:
 		shoot()
-		reload_time_left = RELOAD_TIME
+		reload_time_left = reload_time
 		
 func shoot():
 	var shot = shot_scene.instantiate()
 	shot.position = position
+	emit_signal("shot_created", shot)
 	get_parent().add_child(shot)
 	shot.shoot(get_global_mouse_position() - global_position)
