@@ -28,4 +28,4 @@ func shoot():
 	var shot = shot_scene.instantiate()
 	shot.position = position
 	get_parent().add_child(shot)
-	shot.shoot(get_viewport().get_mouse_position() - global_position)
+	shot.shoot(get_global_mouse_position() - global_position)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=10 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
@@ -10,8 +10,27 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
 radius = 19937.1
 
+[sub_resource type="Shader" id="Shader_b3mk2"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.0.beta2's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+void fragment(){
+  vec4 c = texture(SCREEN_TEXTURE, SCREEN_UV);
+  c *= 40.0;
+  c = vec4( round(c.r), round(c.g), round(c.b), round(c.a) );
+  c /= 40.0;
+  COLOR = c;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1yht2"]
+shader = SubResource("Shader_b3mk2")
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lvlh1")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
 
 [node name="Enemy" parent="." instance=ExtResource("1_ku7ml")]
 position = Vector2(670, 487)
@@ -46,6 +65,26 @@ gravity = 20.0
 [node name="CollisionShape2d" type="CollisionShape2D" parent="player/Area2d"]
 shape = SubResource("CircleShape2D_qwfva")
 metadata/_edit_lock_ = true
+
+[node name="Camera2d" type="Camera2D" parent="player"]
+current = true
+smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2d"]
+
+[node name="ColorRect" type="ColorRect" parent="player/Camera2d/CanvasLayer"]
+material = SubResource("ShaderMaterial_1yht2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Shot" parent="." instance=ExtResource("2_udiyk")]
 position = Vector2(184, 316)
@@ -98,4 +137,4 @@ z_index = -1
 texture = ExtResource("4_ry685")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.27451, 0.27451, 0.27451, 1)
+color = Color(0.117647, 0.117647, 0.117647, 1)

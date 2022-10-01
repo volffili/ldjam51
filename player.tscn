@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0r601lgnn2yv"]
+[gd_scene load_steps=5 format=3 uid="uid://b0r601lgnn2yv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7ydma"]
 [ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="2_nqfcf"]
+[ext_resource type="Texture2D" uid="uid://bprmw1e3il1ct" path="res://light2.png" id="3_83oed"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wu6a8"]
 radius = 12.0
@@ -16,13 +17,7 @@ texture = ExtResource("2_nqfcf")
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wu6a8")
 
-[node name="Camera2d" type="Camera2D" parent="."]
-current = true
-smoothing_enabled = true
-smoothing_speed = 10.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
+[node name="PointLight2d" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("3_83oed")
+texture_scale = 4.0
