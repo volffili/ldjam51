@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=9 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
-[ext_resource type="PackedScene" uid="uid://b0r601lgnn2yv" path="res://player.tscn" id="2_c2ayt"]
-[ext_resource type="PackedScene" uid="uid://c4x181naf4jx2" path="res://shot.tscn" id="2_udiyk"]
+[ext_resource type="PackedScene" uid="uid://by84l0be7k16r" path="res://player.tscn" id="2_c2ayt"]
 [ext_resource type="Texture2D" uid="uid://17uy3mqeeg44" path="res://bg.png" id="4_ry685"]
-[ext_resource type="PackedScene" path="res://tree.tscn" id="5_rcm2d"]
+[ext_resource type="PackedScene" uid="uid://d1e8a42ewl3p5" path="res://tree.tscn" id="5_rcm2d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
 radius = 19937.1
@@ -85,18 +84,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Shot" parent="." instance=ExtResource("2_udiyk")]
-position = Vector2(184, 316)
-
-[node name="Shot2" parent="." instance=ExtResource("2_udiyk")]
-position = Vector2(66, 329)
-
-[node name="Shot3" parent="." instance=ExtResource("2_udiyk")]
-position = Vector2(231, 337)
-
-[node name="Shot4" parent="." instance=ExtResource("2_udiyk")]
-position = Vector2(279, 306)
 
 [node name="tree" parent="." instance=ExtResource("5_rcm2d")]
 position = Vector2(384, 371)
