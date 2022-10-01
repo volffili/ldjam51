@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://2slefh3k5bgm"]
+[gd_scene load_steps=8 format=3 uid="uid://2slefh3k5bgm"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_c5ohb"]
 [ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="1_fox4u"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lqyfs"]
+cull_mode = 2
+polygon = PackedVector2Array(-25, -26, -23, -28, 23, -28, 26, -25, 28, -22, 28, 22, 26, 25, 23, 28, -23, 28, -26, 26, -28, 23, -28, -23)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_s5w4n"]
-radius = 26.0
+radius = 31.0
 
 [sub_resource type="Animation" id="Animation_6sxd8"]
 resource_name = "death"
@@ -67,6 +71,10 @@ script = ExtResource("1_c5ohb")
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("1_fox4u")
+
+[node name="LightOccluder2d" type="LightOccluder2D" parent="Icon"]
+scale = Vector2(2.28571, 2.28571)
+occluder = SubResource("OccluderPolygon2D_lqyfs")
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_s5w4n")
