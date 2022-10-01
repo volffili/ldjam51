@@ -2,11 +2,13 @@
 
 [ext_resource type="PackedScene" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="PackedScene" uid="uid://cxmnvkr3liji2" path="res://player.tscn" id="2_c2ayt"]
+[ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
+[ext_resource type="PackedScene" uid="uid://c4x181naf4jx2" path="res://shot.tscn" id="2_udiyk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
 radius = 2521.48
 
-[node name="Node2d" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_ku7ml")]
 position = Vector2(670, 487)
@@ -28,6 +30,8 @@ position = Vector2(527, 159)
 
 [node name="Area2d" type="Area2D" parent="."]
 position = Vector2(287, 355)
+collision_layer = 0
+collision_mask = 2
 gravity_space_override = 1
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
@@ -39,3 +43,14 @@ shape = SubResource("CircleShape2D_qwfva")
 
 [node name="player" parent="." instance=ExtResource("2_c2ayt")]
 position = Vector2(833, 445)
+[node name="Shot" parent="." instance=ExtResource("2_udiyk")]
+position = Vector2(184, 316)
+
+[node name="Shot2" parent="." instance=ExtResource("2_udiyk")]
+position = Vector2(66, 329)
+
+[node name="Shot3" parent="." instance=ExtResource("2_udiyk")]
+position = Vector2(231, 337)
+
+[node name="Shot4" parent="." instance=ExtResource("2_udiyk")]
+position = Vector2(279, 306)
