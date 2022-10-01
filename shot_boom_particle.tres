@@ -1,10 +1,17 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://xpx417mbvr45"]
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://xpx417mbvr45"]
 
 [sub_resource type="Gradient" id="Gradient_ctfej"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_2wlo6"]
 gradient = SubResource("Gradient_ctfej")
+
+[sub_resource type="Curve" id="Curve_s8j8w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8a5tc"]
+curve = SubResource("Curve_s8j8w")
 
 [resource]
 resource_local_to_scene = true
@@ -15,9 +22,9 @@ particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
 spread = 180.0
 flatness = 1.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 80.0
-initial_velocity_max = 130.0
+gravity = Vector3(0, 100, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 linear_accel_min = -20.0
@@ -25,5 +32,6 @@ linear_accel_max = -10.0
 damping_min = 100.0
 damping_max = 100.0
 scale_max = 4.0
+scale_curve = SubResource("CurveTexture_8a5tc")
 color_ramp = SubResource("GradientTexture1D_2wlo6")
 turbulence_noise_strength = 5.37
