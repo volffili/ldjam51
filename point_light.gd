@@ -3,7 +3,7 @@ extends PointLight2D
 var associated_shot
 
 func _ready():
-	scale = Vector2(1,1)
+	scale = Vector2(2,2)
 
 func assign(shot):
 	associated_shot = shot

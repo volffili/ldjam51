@@ -26,8 +26,9 @@ _data = {
 }
 
 [node name="boom" type="GPUParticles2D"]
-amount = 100
+amount = 300
 explosiveness = 1.0
+randomness = 1.0
 visibility_rect = Rect2(-200, -200, 400, 400)
 process_material = ExtResource("1_5p80j")
 script = ExtResource("2_6yjjb")
