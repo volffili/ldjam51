@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=9 format=3 uid="uid://dg6dyc82ncdih"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
-[ext_resource type="PackedScene" uid="uid://by84l0be7k16r" path="res://player.tscn" id="2_c2ayt"]
+[ext_resource type="PackedScene" uid="uid://67xb8npteuy" path="res://player.tscn" id="2_c2ayt"]
 [ext_resource type="Texture2D" uid="uid://17uy3mqeeg44" path="res://bg.png" id="4_ry685"]
-[ext_resource type="PackedScene" uid="uid://d1e8a42ewl3p5" path="res://tree.tscn" id="5_rcm2d"]
+[ext_resource type="PackedScene" uid="uid://cqar6qexw4tfr" path="res://tree.tscn" id="5_rcm2d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
 radius = 19937.1
