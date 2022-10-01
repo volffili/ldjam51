@@ -94,5 +94,13 @@ lifetime = 0.5
 visibility_rect = Rect2(-200, -200, 400, 400)
 process_material = SubResource("ParticleProcessMaterial_l6wnk")
 
+<<<<<<< HEAD
+=======
+[node name="PointLight2d" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("3_6v848")
+texture_scale = 2.0
+
+>>>>>>> 0f376ea1f88cc2762d738894222168a9aff7a692
 [connection signal="body_entered" from="." to="." method="_on_shot_body_entered"]
 [connection signal="tree_exited" from="CollisionShape2d" to="." method="_on_collision_shape_2d_tree_exited"]
