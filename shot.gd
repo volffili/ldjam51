@@ -25,9 +25,13 @@ func _on_shot_body_entered(body):
 	var boom = boom_scene.instantiate()
 	boom.position = position
 	get_parent().add_child(boom)
-	queue_free()
+	$GpuParticles2d.emitting = false
+	my_point_light.clear_assigned()
+	my_point_light.die()
+	my_point_light = null
 	emit_signal("impact", self, body)
 
 func _on_collision_shape_2d_tree_exited():
-	my_point_light.clear_assigned()
-	my_point_light.die()
+	if my_point_light:
+		my_point_light.queue_free()
+		my_point_light.die()

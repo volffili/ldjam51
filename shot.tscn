@@ -71,7 +71,7 @@ libraries = {
 
 [node name="GpuParticles2d" type="GPUParticles2D" parent="."]
 amount = 100
-lifetime = 0.7
+lifetime = 0.2
 visibility_rect = Rect2(-200, -200, 400, 400)
 process_material = ExtResource("3_diu87")
 
