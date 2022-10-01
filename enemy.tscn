@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://2slefh3k5bgm"]
+
+[ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="1_fox4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s5w4n"]
+radius = 26.0
+
+[node name="Enemy" type="RigidBody2D"]
+lock_rotation = true
+linear_damp_mode = 1
+linear_damp = 0.5
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("1_fox4u")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s5w4n")

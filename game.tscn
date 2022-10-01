@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=3 format=3 uid="uid://bahkgg6ob7qhb"]
+
+[ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
+radius = 2521.48
 
 [node name="Node2d" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_ku7ml")]
+position = Vector2(670, 487)
+
+[node name="Enemy2" parent="." instance=ExtResource("1_ku7ml")]
+position = Vector2(241, 574)
+
+[node name="Enemy3" parent="." instance=ExtResource("1_ku7ml")]
+position = Vector2(66, 493)
+
+[node name="Enemy4" parent="." instance=ExtResource("1_ku7ml")]
+position = Vector2(652, 311)
+
+[node name="Enemy5" parent="." instance=ExtResource("1_ku7ml")]
+position = Vector2(410, 507)
+
+[node name="Enemy6" parent="." instance=ExtResource("1_ku7ml")]
+position = Vector2(527, 159)
+
+[node name="Area2d" type="Area2D" parent="."]
+position = Vector2(287, 355)
+gravity_space_override = 1
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 20.0
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
+shape = SubResource("CircleShape2D_qwfva")
