@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=11 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
@@ -10,9 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c7qten550w4hb" path="res://upgrades/damage.tscn" id="8_lg65u"]
 [ext_resource type="PackedScene" uid="uid://biu3kl5mrykfv" path="res://upgrades/impact.tscn" id="9_186a7"]
 [ext_resource type="PackedScene" uid="uid://hjnuukwf8ij3" path="res://upgrades/mouse_homing.tscn" id="10_tjx0s"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
-radius = 19937.1
 
 [sub_resource type="Shader" id="Shader_b3mk2"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.0.beta2's CanvasItemMaterial.
@@ -58,19 +55,6 @@ position = Vector2(527, 159)
 
 [node name="player" parent="." instance=ExtResource("2_c2ayt")]
 position = Vector2(286, 409)
-
-[node name="Area2d" type="Area2D" parent="player"]
-collision_layer = 0
-collision_mask = 2
-gravity_space_override = 1
-gravity_point = true
-gravity_point_center = Vector2(0, 0)
-gravity_direction = Vector2(0, 0)
-gravity = 20.0
-
-[node name="CollisionShape2d" type="CollisionShape2D" parent="player/Area2d"]
-shape = SubResource("CircleShape2D_qwfva")
-metadata/_edit_lock_ = true
 
 [node name="Camera2d" type="Camera2D" parent="player"]
 current = true
