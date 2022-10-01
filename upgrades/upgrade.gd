@@ -12,7 +12,6 @@ func _on_body_entered(p):
 	_on_picked()
 
 func _on_shoot_base(shot):
-	shot.damage *= 2.0
 	shot.connect("impact", self._on_impact)
 	_on_shoot(shot)
 	

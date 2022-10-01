@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3txivgacya3s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_imisd"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_gktnu"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.266667)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yp32q"]
+gradient = SubResource("Gradient_gktnu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_034dj"]
+lifetime_randomness = 0.27
+emission_shape = 2
+emission_sphere_radius = 18.3
+particle_flag_disable_z = true
+gravity = Vector3(0, -50, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 3.0
+scale_max = 10.0
+color = Color(1, 0.811765, 0, 0.678431)
+color_ramp = SubResource("GradientTexture1D_yp32q")
+hue_variation_max = 0.25
+
+[node name="fire_dot_effect" type="Node2D"]
+
+[node name="GpuParticles2d" type="GPUParticles2D" parent="."]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_imisd")
+amount = 30
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_034dj")

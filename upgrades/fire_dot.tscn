@@ -3,5 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c7qten550w4hb" path="res://upgrades/damage.tscn" id="1_ywtjr"]
 [ext_resource type="Script" path="res://upgrades/fire_dot.gd" id="2_xyxai"]
 
-[node name="upgrade" instance=ExtResource("1_ywtjr")]
+[node name="fire_dot" instance=ExtResource("1_ywtjr")]
 script = ExtResource("2_xyxai")
+
+[node name="Label" parent="." index="1"]
+text = "Fire Dot"
