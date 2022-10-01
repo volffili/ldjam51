@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=4 format=3 uid="uid://bahkgg6ob7qhb"]
 
-[ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="1_ku7ml"]
+[ext_resource type="PackedScene" uid="uid://cxmnvkr3liji2" path="res://player.tscn" id="2_c2ayt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
 radius = 2521.48
@@ -35,3 +36,6 @@ gravity = 20.0
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="Area2d"]
 shape = SubResource("CircleShape2D_qwfva")
+
+[node name="player" parent="." instance=ExtResource("2_c2ayt")]
+position = Vector2(833, 445)
