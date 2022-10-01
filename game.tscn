@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=7 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
-[ext_resource type="PackedScene" uid="uid://b0r601lgnn2yv" path="res://player.tscn" id="2_c2ayt"]
+[ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
+[ext_resource type="PackedScene" uid="uid://cxmnvkr3liji2" path="res://player.tscn" id="2_c2ayt"]
 [ext_resource type="PackedScene" uid="uid://c4x181naf4jx2" path="res://shot.tscn" id="2_udiyk"]
 [ext_resource type="Texture2D" uid="uid://17uy3mqeeg44" path="res://bg.png" id="4_ry685"]
+[ext_resource type="PackedScene" uid="uid://d1e8a42ewl3p5" path="res://tree.tscn" id="5_rcm2d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwfva"]
 radius = 19937.1
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_lvlh1")
 
 [node name="Enemy" parent="." instance=ExtResource("1_ku7ml")]
 position = Vector2(670, 487)
@@ -29,7 +32,7 @@ position = Vector2(410, 507)
 position = Vector2(527, 159)
 
 [node name="player" parent="." instance=ExtResource("2_c2ayt")]
-position = Vector2(833, 445)
+position = Vector2(286, 409)
 
 [node name="Area2d" type="Area2D" parent="player"]
 collision_layer = 0
@@ -55,6 +58,39 @@ position = Vector2(231, 337)
 
 [node name="Shot4" parent="." instance=ExtResource("2_udiyk")]
 position = Vector2(279, 306)
+
+[node name="tree" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(384, 371)
+
+[node name="tree2" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(333, 228)
+
+[node name="tree3" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(494, 262)
+
+[node name="tree4" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(518, 425)
+
+[node name="tree5" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(618, 179)
+
+[node name="tree6" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(379, 154)
+
+[node name="tree7" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(229, 119)
+
+[node name="tree8" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(280, 106)
+
+[node name="tree9" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(183, 111)
+
+[node name="tree10" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(127, 111)
+
+[node name="tree11" parent="." instance=ExtResource("5_rcm2d")]
+position = Vector2(168, 190)
 
 [node name="Bg" type="Sprite2D" parent="."]
 scale = Vector2(10000, 10000)
