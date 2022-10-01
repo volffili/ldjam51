@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4x181naf4jx2"]
+[gd_scene load_steps=11 format=3 uid="uid://c4x181naf4jx2"]
 
 [ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="1_1dusm"]
 [ext_resource type="Script" path="res://shot.gd" id="1_qojlr"]
@@ -99,6 +99,25 @@ _data = {
 "start": SubResource("Animation_qqjyp")
 }
 
+[sub_resource type="Gradient" id="Gradient_ctfej"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2wlo6"]
+gradient = SubResource("Gradient_ctfej")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l6wnk"]
+emission_shape = 2
+emission_sphere_radius = 7.31
+particle_flag_disable_z = true
+spread = 19.64
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_2wlo6")
+turbulence_noise_strength = 5.37
+
 [node name="Shot" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 2
@@ -121,5 +140,11 @@ autoplay = "start"
 libraries = {
 "": SubResource("AnimationLibrary_mipm3")
 }
+
+[node name="GpuParticles2d" type="GPUParticles2D" parent="."]
+amount = 30
+lifetime = 0.5
+trail_length_secs = 0.1
+process_material = SubResource("ParticleProcessMaterial_l6wnk")
 
 [connection signal="body_entered" from="." to="." method="_on_shot_body_entered"]
