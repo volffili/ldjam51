@@ -4,7 +4,6 @@ var associated_shot
 
 func _ready():
 	scale = Vector2(1,1)
-	energy = 1
 
 func assign(shot):
 	associated_shot = shot

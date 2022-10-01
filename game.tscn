@@ -121,13 +121,13 @@ position = Vector2(127, 111)
 position = Vector2(168, 190)
 
 [node name="Bg" type="Sprite2D" parent="."]
-modulate = Color(0.521569, 0.521569, 0.521569, 1)
+modulate = Color(0.458824, 0.458824, 0.458824, 1)
 scale = Vector2(10000, 10000)
 z_index = -3
 texture = ExtResource("4_ry685")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.117647, 0.117647, 0.117647, 1)
+color = Color(0.27451, 0.27451, 0.27451, 1)
 
 [node name="fire_rate" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("7_t1fb3")]
 position = Vector2(332, 356)

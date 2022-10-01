@@ -5,7 +5,7 @@
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lqyfs"]
 cull_mode = 2
-polygon = PackedVector2Array(-25, -26, -23, -28, 23, -28, 26, -25, 28, -22, 28, 22, 26, 25, 23, 28, -23, 28, -26, 26, -28, 23, -28, -23)
+polygon = PackedVector2Array(28, 16, 28, 22, 26, 25, 23, 28, -23, 28, -26, 26, -28, 23, -28, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s5w4n"]
 radius = 31.0
@@ -69,6 +69,7 @@ linear_damp = 0.5
 script = ExtResource("1_c5ohb")
 
 [node name="Icon" type="Sprite2D" parent="."]
+light_mask = 2
 scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("1_fox4u")
 

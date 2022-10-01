@@ -6,7 +6,7 @@
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yencr"]
 cull_mode = 2
-polygon = PackedVector2Array(-4, 5, -4, -10, 0, -11, 3, -9, 3, 5, 0, 6)
+polygon = PackedVector2Array(-4, 5, -4, -3, -1, -5, 3, -3, 3, 5, 0, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sq8ah"]
 radius = 4.0
