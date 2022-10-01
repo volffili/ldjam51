@@ -220,7 +220,6 @@ visibility_rect = Rect2(-200, -200, 400, 400)
 process_material = SubResource("ParticleProcessMaterial_l6wnk")
 
 [node name="PointLight2d" type="PointLight2D" parent="."]
-energy = 0.5
 shadow_enabled = true
 texture = ExtResource("3_6v848")
 texture_scale = 2.0
