@@ -26,6 +26,6 @@ func _process(delta):
 		
 func shoot():
 	var shot = shot_scene.instantiate()
-	shot.position = position
+	shot.position = Vector2(position.x,position.y-20)
 	get_parent().add_child(shot)
 	shot.shoot(get_global_mouse_position() - global_position)
