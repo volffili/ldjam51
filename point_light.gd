@@ -7,6 +7,7 @@ func _ready():
 
 func assign(shot):
 	associated_shot = shot
+	position = Vector2(associated_shot.position.x,associated_shot.position.y+20)
 	
 func clear_assigned():
 	associated_shot = null
