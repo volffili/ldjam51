@@ -12,4 +12,4 @@ func _ready():
 	treetop.set_texture(treetop_sprites[randi()%3])
 	treetop.flip_h = randi()%2
 	root.flip_h = randi()%2
-	scale = Vector2(1,1)*(randf()/2+1)
+	scale = Vector2(1,1)*(randf()/2+1.5)

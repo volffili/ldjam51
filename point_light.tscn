@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://04k00ci11in0"]
+
+[ext_resource type="Texture2D" uid="uid://bprmw1e3il1ct" path="res://light.png" id="1_ksr1a"]
+[ext_resource type="Script" path="res://point_light.gd" id="2_4nxcr"]
+
+[node name="PointLight2d" type="PointLight2D"]
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("1_ksr1a")
+texture_scale = 2.0
+script = ExtResource("2_4nxcr")
