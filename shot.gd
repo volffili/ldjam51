@@ -10,7 +10,7 @@ var speed = 500
 var my_point_light
 
 func shoot(direction):
-	linear_velocity = direction.normalized() * speed
+	linear_velocity = direction.normalized() * speed * (abs(cos(direction.angle()))/2+0.5)
 	$GpuParticles2d.rotation = direction.angle()
 	
 	my_point_light = point_light_scene.instantiate()
