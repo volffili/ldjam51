@@ -14,8 +14,8 @@ func _ready():
 	add_child(spawn_timer)
 	spawn_timer.start()
 	
-	for i in range(-50, 50):
-		for j in range(-50, 50):
+	for i in range(-10, 10):
+		for j in range(-10, 10):
 			var bg_tile = bg_tile_scene.instantiate()
 			bg_tile.position = Vector2(i * 100, j * 100)
 			add_child(bg_tile)

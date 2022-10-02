@@ -43,10 +43,11 @@ func _on_shot_body_entered(body):
 	boom.modulate = modulate
 	get_parent().add_child(boom)
 	emit_signal("impact", self, body)
+	get_node("/root/Game/player").shake_amount += damage / 3.0
 
 func _on_collision_shape_2d_tree_exited():
 	if is_instance_valid(my_point_light):
 		my_point_light.queue_free()
-		
+
 func _process(delta):
 	emit_signal("shot_process", delta)
