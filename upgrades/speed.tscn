@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0pgjknfvg53w"]
+[gd_scene load_steps=5 format=3 uid="uid://b0pgjknfvg53w"]
 
 [ext_resource type="PackedScene" uid="uid://b83tn0qsgjp1d" path="res://upgrades/upgrade.tscn" id="1_7apy6"]
 [ext_resource type="Script" path="res://upgrades/speed.gd" id="2_esxui"]
+[ext_resource type="Texture2D" uid="uid://dhj625jy8dytn" path="res://sprites/upgrades/shoes.png" id="3_r7cbv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m01sw"]
+radius = 15.0
 
 [node name="speed" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_esxui")
 
+[node name="Icon" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("3_r7cbv")
+
 [node name="Label" parent="." index="1"]
+visible = false
 text = "Speed"
+
+[node name="CollisionShape2d" parent="." index="2"]
+shape = SubResource("CircleShape2D_m01sw")
