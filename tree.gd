@@ -13,3 +13,4 @@ func _ready():
 	treetop.flip_h = randi()%2
 	root.flip_h = randi()%2
 	scale = Vector2(1,1)*(randf()/2+1.5)
+	modulate = Color(0.8+randf()/5, 0.8+randf()/5, 0.8+randf()/5)

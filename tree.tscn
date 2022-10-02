@@ -6,7 +6,7 @@
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yencr"]
 cull_mode = 2
-polygon = PackedVector2Array(-4, 5, -4, -3, -1, -5, 3, -3, 3, 5, 0, 6)
+polygon = PackedVector2Array(-5, -1, -4, -3, 4, -3, 5, -1, 0, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sq8ah"]
 radius = 5.0
@@ -15,6 +15,7 @@ radius = 5.0
 script = ExtResource("1_8um2u")
 
 [node name="root" type="Sprite2D" parent="."]
+light_mask = 2
 texture_filter = 1
 texture_repeat = 1
 z_index = 1

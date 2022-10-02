@@ -40,7 +40,7 @@ animations = [{
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lqyfs"]
 cull_mode = 2
-polygon = PackedVector2Array(-13, 8, 9, 8, 6, 12, -9, 12)
+polygon = PackedVector2Array(-5, 9, 2, 9, 3.49848, 9.75213, 4, 10.5089, 3.43733, 11.3479, 2, 12, -5, 12, -6.49599, 11.2833, -7, 10.5549, -6.51489, 9.80063)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s5w4n"]
 radius = 13.1529
