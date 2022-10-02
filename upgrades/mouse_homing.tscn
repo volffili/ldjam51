@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://hjnuukwf8ij3"]
+[gd_scene load_steps=4 format=3 uid="uid://hjnuukwf8ij3"]
 
 [ext_resource type="PackedScene" uid="uid://b83tn0qsgjp1d" path="res://upgrades/upgrade.tscn" id="1_7apy6"]
 [ext_resource type="Script" path="res://upgrades/mouse_homing.gd" id="2_g8sin"]
+[ext_resource type="Texture2D" uid="uid://b5it70u5w6mr3" path="res://sprites/upgrades/homing.png" id="3_bg4sl"]
 
 [node name="impact" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_g8sin")
 
+[node name="Icon" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("3_bg4sl")
+
 [node name="Label" parent="." index="1"]
+visible = false
 text = "Mouse Homing"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7qten550w4hb"]
 
 [ext_resource type="Script" path="res://upgrades/damage.gd" id="1_wp7pp"]
-[ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="2_jg5tt"]
+[ext_resource type="Texture2D" uid="uid://u1iatkjn0ww5" path="res://sprites/upgrades/damage.png" id="2_m065u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yl5ba"]
 size = Vector2(34, 34)
@@ -13,10 +13,10 @@ script = ExtResource("1_wp7pp")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
-scale = Vector2(0.28125, 0.28125)
-texture = ExtResource("2_jg5tt")
+texture = ExtResource("2_m065u")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -32.0
 offset_top = -34.0
 offset_right = 33.0
