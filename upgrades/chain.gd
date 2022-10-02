@@ -22,7 +22,7 @@ func _on_impact(shot, enemy):
 	new_shot.global_position = shot.global_position
 	new_shot.duplicated_chain = true
 	new_shot.duplicated_triple = shot.duplicated_triple
-	new_shot.damage /= 2
+	new_shot.damage /= 2.0
 	new_shot.ignore_enemy = enemy
 	new_shot.modulate *= Color.YELLOW
 	player.emit_signal("shot_created", new_shot)

@@ -16,10 +16,10 @@ func _physics_process(delta):
 		$Sprite2d.set_scale(Vector2(horizontal,1))
 	if horizontal or vertical:
 		var dir = Vector2(horizontal, vertical).normalized()
-		velocity = dir * speed * (abs(cos(dir.angle()))/2+0.75)
+		velocity = dir * speed * (abs(cos(dir.angle()))/2.0+0.75)
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed/15)
-		velocity.y = move_toward(velocity.y, 0, speed/15)
+		velocity.x = move_toward(velocity.x, 0, speed/15.0)
+		velocity.y = move_toward(velocity.y, 0, speed/15.0)
 
 	move_and_slide()
 	

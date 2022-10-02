@@ -11,5 +11,5 @@ func _on_impact(shot, enemy):
 	get_node("/root/Game").add_child(effect)
 	effect.global_position = pos
 	effect.get_node("Explode").connect("body_entered", func(enemy):
-		enemy.hit(damage / 2)
+		enemy.hit(damage / 2.0)
 	)

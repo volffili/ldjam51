@@ -16,5 +16,5 @@ func hit(dmg):
 
 func move():
 	var direction = (get_node("/root/Game/player").global_position - self.global_position).normalized()
-	apply_force(Vector2(direction.x,direction.y * (abs(cos(direction.angle()))/2+0.75))*7000)
+	apply_force(Vector2(direction.x,direction.y * (abs(cos(direction.angle()))/2.0+0.75))*7000)
 	$AnimationPlayer.play("move")
