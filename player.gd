@@ -5,7 +5,9 @@ signal shot_created
 var shot_scene = preload("res://shot.tscn")
 var speed = 80.0
 var reload_time = 0.8
-var reload_time_left = 0
+var reload_time_left = 0.0
+var charge_up = false
+var charge_time = 0.0
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -26,12 +28,19 @@ func _physics_process(delta):
 func _process(delta):
 	reload_time_left -= delta
 	if Input.is_action_pressed("shoot") and reload_time_left <= 0:
-		shoot()
-		reload_time_left = reload_time
-		
-func shoot():
+		if charge_up:
+			charge_time += delta
+		else:
+			shoot()
+			reload_time_left = reload_time
+	elif charge_up and charge_time > 0:
+		shoot(min(1 + (charge_time / reload_time), 5))
+		charge_time = 0
+
+func shoot(dmg = 1):
 	var shot = shot_scene.instantiate()
 	shot.position = Vector2(position.x,position.y-20)
+	shot.damage *= dmg
 	emit_signal("shot_created", shot)
 	get_parent().add_child(shot)
 	shot.shoot(get_global_mouse_position() - global_position)
