@@ -18,6 +18,9 @@ var piercing = false
 func shoot(direction):
 	linear_velocity = direction.normalized() * speed * (abs(cos(direction.angle()))/2+0.75) * (0.8 + randf() * 0.4)
 	$GpuParticles2d.rotation = direction.angle()
+	#$GpuParticles2d.process_material.scale_min = damage / 4
+	$GpuParticles2d.process_material.scale_max = damage / 2
+	$GpuParticles2d.scale *= damage / 10
 	
 	my_point_light = point_light_scene.instantiate()
 	get_parent().add_child(my_point_light)

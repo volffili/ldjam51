@@ -15,5 +15,6 @@ func _on_shoot(shot):
 		shot.get_parent().call_deferred("add_child", b)
 		b.set_deferred("global_position", g)
 		await get_tree().create_timer(2.0).timeout
-		b.queue_free()
+		if is_instance_valid(b):
+			b.queue_free()
 	)
