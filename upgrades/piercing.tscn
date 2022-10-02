@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgw2nubmexa81"]
+[gd_scene load_steps=4 format=3 uid="uid://dgw2nubmexa81"]
 
 [ext_resource type="PackedScene" uid="uid://b83tn0qsgjp1d" path="res://upgrades/upgrade.tscn" id="1_7apy6"]
 [ext_resource type="Script" path="res://upgrades/piercing.gd" id="2_dkj1t"]
+[ext_resource type="Texture2D" uid="uid://driknxo0w2pns" path="res://sprites/upgrades/bounce.png" id="3_licfc"]
 
 [node name="piercing" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_dkj1t")
 
+[node name="Icon" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("3_licfc")
+
 [node name="Label" parent="." index="1"]
+visible = false
 text = "Bouncy
 "

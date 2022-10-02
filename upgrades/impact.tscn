@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://biu3kl5mrykfv"]
+[gd_scene load_steps=4 format=3 uid="uid://biu3kl5mrykfv"]
 
 [ext_resource type="PackedScene" uid="uid://b83tn0qsgjp1d" path="res://upgrades/upgrade.tscn" id="1_7apy6"]
 [ext_resource type="Script" path="res://upgrades/impact.gd" id="2_ajdiy"]
+[ext_resource type="Texture2D" uid="uid://bu4vi6e2ol4b7" path="res://sprites/upgrades/impact.png" id="3_ojl6l"]
 
 [node name="impact" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_ajdiy")
 
+[node name="Icon" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = ExtResource("3_ojl6l")
+
 [node name="Label" parent="." index="1"]
+visible = false
 text = "Impact"
