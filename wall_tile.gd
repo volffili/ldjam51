@@ -8,3 +8,4 @@ func _ready():
 		var tree = tree_scene.instantiate()
 		tree.position = Vector2(randi_range(-size/2.0, size/2.0), randi_range(-size/2.0, size/2.0))
 		add_child(tree)
+
