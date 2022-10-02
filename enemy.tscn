@@ -115,7 +115,7 @@ _data = {
 
 [node name="Enemy" type="RigidBody2D" groups=["enemy"]]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 3
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_w7l53")
 lock_rotation = true
@@ -124,11 +124,13 @@ linear_damp = 5.0
 script = ExtResource("1_c5ohb")
 
 [node name="Icon" type="AnimatedSprite2D" parent="."]
-light_mask = 2
+light_mask = 5
 frames = SubResource("SpriteFrames_4epft")
 
 [node name="LightOccluder2d" type="LightOccluder2D" parent="Icon"]
+light_mask = 8
 occluder = SubResource("OccluderPolygon2D_lqyfs")
+occluder_light_mask = 8
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3)
