@@ -69,7 +69,7 @@ _data = {
 
 [node name="PointLight2d" type="PointLight2D"]
 modulate = Color(1, 1, 1, 0)
-scale = Vector2(2, 2)
+scale = Vector2(1, 0.5)
 energy = 1.5
 range_item_cull_mask = 3
 shadow_enabled = true

@@ -23,9 +23,9 @@ render_mode blend_mix;
 
 void fragment(){
   vec4 c = texture(SCREEN_TEXTURE, SCREEN_UV);
-  c *= 20.0;
+  c *= 35.0;
   c = vec4( round(c.r), round(c.g), round(c.b), round(c.a) );
-  c /= 20.0;
+  c /= 35.0;
   COLOR = c;
 }
 
@@ -149,7 +149,7 @@ trail_sections = 2
 process_material = SubResource("ParticleProcessMaterial_w17et")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.27451, 0.27451, 0.27451, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="fire_rate" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("7_t1fb3")]
 position = Vector2(332, 356)
