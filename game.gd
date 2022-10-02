@@ -28,3 +28,4 @@ func spawn():
 	var enemy = enemy_scene.instantiate()
 	enemy.global_position = $player.global_position + Vector2.from_angle(randf()*2*PI) * 500
 	add_child(enemy)
+
