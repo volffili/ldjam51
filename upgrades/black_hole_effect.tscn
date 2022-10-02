@@ -46,6 +46,5 @@ shape = SubResource("CircleShape2D_3w6g2")
 material = SubResource("CanvasItemMaterial_qr35j")
 amount = 100
 lifetime = 1.5
-preprocess = 1.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_g7ks1")
