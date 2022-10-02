@@ -11,8 +11,8 @@ func _on_shoot(shot):
 			return
 		impact = true
 		var g = b.global_position
-		shot.remove_child(b)
-		shot.get_parent().call_deferred("add_child", b)
+		b.get_parent().remove_child(b)
+		get_node("/root/Game").call_deferred("add_child", b)
 		b.set_deferred("global_position", g)
 		await get_tree().create_timer(2.0).timeout
 		if is_instance_valid(b):

@@ -102,7 +102,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7, 1.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.9, 0.6, 0.9]
+"values": [1.5, 1.2, 1.5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -149,6 +149,7 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D"]
+motion_mode = 1
 floor_block_on_wall = false
 script = ExtResource("1_7ydma")
 
@@ -192,7 +193,7 @@ texture_scale = 2.0
 light_mask = 8
 position = Vector2(0, 10)
 scale = Vector2(1, 0.5)
-energy = 1.25
+energy = 0.6
 range_item_cull_mask = 8
 shadow_enabled = true
 shadow_item_cull_mask = 8

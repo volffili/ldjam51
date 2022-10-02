@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=25 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dfu02oy7ehqq3" path="res://upgrades/black_hole.tscn" id="13_sfuu7"]
 [ext_resource type="PackedScene" uid="uid://w8adkfy66845" path="res://upgrades/explode.tscn" id="14_siy1d"]
 [ext_resource type="PackedScene" uid="uid://xffa8fgl0f0f" path="res://upgrades/charge_up.tscn" id="15_owmjo"]
+[ext_resource type="PackedScene" uid="uid://vpgydmhjm14v" path="res://upgrades/freeze.tscn" id="16_6gefw"]
 
 [sub_resource type="Shader" id="Shader_b3mk2"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.0.beta2's CanvasItemMaterial.
@@ -150,7 +151,7 @@ trail_sections = 2
 process_material = SubResource("ParticleProcessMaterial_w17et")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.117647, 0.117647, 0.117647, 1)
 
 [node name="fire_rate" parent="." node_paths=PackedStringArray("other_upgrade") instance=ExtResource("7_t1fb3")]
 position = Vector2(332, 356)
@@ -191,3 +192,6 @@ position = Vector2(39, 371)
 
 [node name="charge_up" parent="." instance=ExtResource("15_owmjo")]
 position = Vector2(550, 535)
+
+[node name="freeze" parent="." instance=ExtResource("16_6gefw")]
+position = Vector2(486, 278)
