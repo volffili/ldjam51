@@ -50,5 +50,5 @@ func shoot(dmg = 1):
 	emit_signal("shot_created", shot)
 	get_parent().add_child(shot)
 	shot.shoot(get_global_mouse_position() - global_position)
-	recoil += (global_position - get_global_mouse_position()).normalized() * shot.damage * 3
+	recoil += (global_position - get_global_mouse_position()).normalized() * sqrt(shot.damage) * 5
 	shake_amount += shot.damage / 5.0

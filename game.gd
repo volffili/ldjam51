@@ -85,11 +85,12 @@ func random_upgrade():
 func spawn_upgrades():
 	var u1 = random_upgrade()
 	add_child(u1)
-	u1.global_position = $player.global_position + Vector2(-50, -100)
+	u1.position = $player.position + Vector2(-50, -100)
 	
 	var u2 = random_upgrade()
 	add_child(u2)
-	u2.global_position = $player.global_position + Vector2(50, -100)
+	u2.position = $player.position + Vector2(50, -100)
+	print($player.global_position, u1.global_position, u2.global_position)
 	
 	u1.other_upgrade = u2
 	u2.other_upgrade = u1
