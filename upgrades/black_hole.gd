@@ -12,8 +12,8 @@ func _on_shoot(shot):
 		impact = true
 		var g = b.global_position
 		shot.remove_child(b)
-		shot.get_parent().add_child(b)
-		b.global_position = g
+		shot.get_parent().call_deferred("add_child", add_child(b))
+		b.set_deferred("global_position", g)
 		await get_tree().create_timer(2.0).timeout
 		b.queue_free()
 	)
