@@ -8,9 +8,7 @@
 script = ExtResource("2_xyxai")
 
 [node name="Icon" parent="." index="0"]
-scale = Vector2(1, 1)
 texture = ExtResource("3_ubu7i")
 
 [node name="Label" parent="." index="1"]
-visible = false
 text = "Fire Dot"

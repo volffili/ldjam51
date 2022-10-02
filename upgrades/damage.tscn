@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7qten550w4hb"]
+[gd_scene load_steps=6 format=3 uid="uid://c7qten550w4hb"]
 
 [ext_resource type="Script" path="res://upgrades/damage.gd" id="1_wp7pp"]
 [ext_resource type="Texture2D" uid="uid://u1iatkjn0ww5" path="res://sprites/upgrades/damage.png" id="2_m065u"]
+[ext_resource type="Texture2D" uid="uid://bprmw1e3il1ct" path="res://light.png" id="3_3wkom"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wkhel"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yl5ba"]
 size = Vector2(34, 34)
@@ -12,7 +16,9 @@ monitorable = false
 script = ExtResource("1_wp7pp")
 
 [node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_wkhel")
 position = Vector2(0, -1)
+z_index = 999
 texture = ExtResource("2_m065u")
 
 [node name="Label" type="Label" parent="."]
@@ -27,5 +33,9 @@ horizontal_alignment = 1
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_yl5ba")
+
+[node name="PointLight2d" type="PointLight2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_3wkom")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

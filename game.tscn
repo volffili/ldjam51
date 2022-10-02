@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
 [ext_resource type="PackedScene" uid="uid://67xb8npteuy" path="res://player.tscn" id="2_c2ayt"]
-[ext_resource type="PackedScene" uid="uid://snoggehctvrd" path="res://upgrades/fire_rate.tscn" id="7_t1fb3"]
+[ext_resource type="PackedScene" uid="uid://b2f41va1tgnm1" path="res://upgrades/fire_rate.tscn" id="7_t1fb3"]
 [ext_resource type="PackedScene" uid="uid://clkqn6f2bhe1m" path="res://upgrades/fire_dot.tscn" id="8_jdi01"]
 [ext_resource type="PackedScene" uid="uid://c7qten550w4hb" path="res://upgrades/damage.tscn" id="8_lg65u"]
 [ext_resource type="PackedScene" uid="uid://biu3kl5mrykfv" path="res://upgrades/impact.tscn" id="9_186a7"]

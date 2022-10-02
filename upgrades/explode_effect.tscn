@@ -100,6 +100,7 @@ shape = SubResource("CircleShape2D_3w6g2")
 
 [node name="ExplodeParticles" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_qr35j")
+emitting = false
 amount = 100
 lifetime = 1.2
 one_shot = true

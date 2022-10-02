@@ -9,7 +9,7 @@ var reload_time_left = 0.0
 var charge_up = false
 var charge_time = 0.0
 var recoil = Vector2.ZERO
-var shake_amount = 1.0
+var shake_amount = 0.0
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
