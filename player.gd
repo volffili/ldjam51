@@ -3,8 +3,8 @@ extends CharacterBody2D
 signal shot_created
 
 var shot_scene = preload("res://shot.tscn")
-const SPEED = 175.0
-var reload_time = 0.3
+var speed = 80.0
+var reload_time = 0.8
 var reload_time_left = 0
 
 func _physics_process(delta):
@@ -16,10 +16,10 @@ func _physics_process(delta):
 		$Sprite2d.set_scale(Vector2(horizontal,1))
 	if horizontal or vertical:
 		var dir = Vector2(horizontal, vertical).normalized()
-		velocity = dir * SPEED * (abs(cos(dir.angle()))/2+0.75)
+		velocity = dir * speed * (abs(cos(dir.angle()))/2+0.75)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED/15)
-		velocity.y = move_toward(velocity.y, 0, SPEED/15)
+		velocity.x = move_toward(velocity.x, 0, speed/15)
+		velocity.y = move_toward(velocity.y, 0, speed/15)
 
 	move_and_slide()
 	

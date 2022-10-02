@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ncm7apbh877"]
+
+[ext_resource type="PackedScene" uid="uid://b83tn0qsgjp1d" path="res://upgrades/upgrade.tscn" id="1_7apy6"]
+[ext_resource type="Script" path="res://upgrades/triple_shot.gd" id="2_fvvm5"]
+
+[node name="impact" instance=ExtResource("1_7apy6")]
+script = ExtResource("2_fvvm5")
+
+[node name="Label" parent="." index="1"]
+text = "Triple shot"

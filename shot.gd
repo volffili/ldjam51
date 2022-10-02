@@ -9,9 +9,13 @@ signal shot_process
 var damage = 10
 var speed = 500
 var my_point_light
+var duplicated_triple = false
+var duplicated_chain = false
+var ignore_enemy = null
+var piercing = false
 
 func shoot(direction):
-	linear_velocity = direction.normalized() * speed * (abs(cos(direction.angle()))/2+0.75)
+	linear_velocity = direction.normalized() * speed * (abs(cos(direction.angle()))/2+0.75) * (0.8 + randf() * 0.4)
 	$GpuParticles2d.rotation = direction.angle()
 	
 	my_point_light = point_light_scene.instantiate()
@@ -19,17 +23,22 @@ func shoot(direction):
 	my_point_light.assign(self)
 
 func _on_shot_body_entered(body):
+	if body == ignore_enemy:
+		return
+	
 	body.hit(damage)
-	$CollisionShape2d.set_deferred("disabled", true)
-	$AnimationPlayer.play("hit")
+	
+	if not piercing:
+		$CollisionShape2d.set_deferred("disabled", true)
+		$AnimationPlayer.play("hit")
+		$GpuParticles2d.emitting = false
+		my_point_light.clear_assigned()
+		my_point_light.die()
+		my_point_light = null
 	var boom = boom_scene.instantiate()
 	boom.position = position
 	boom.modulate = modulate
 	get_parent().add_child(boom)
-	$GpuParticles2d.emitting = false
-	my_point_light.clear_assigned()
-	my_point_light.die()
-	my_point_light = null
 	emit_signal("impact", self, body)
 
 func _on_collision_shape_2d_tree_exited():

@@ -1,15 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=16 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="PackedScene" uid="uid://2slefh3k5bgm" path="res://enemy.tscn" id="1_ku7ml"]
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
 [ext_resource type="PackedScene" uid="uid://67xb8npteuy" path="res://player.tscn" id="2_c2ayt"]
-[ext_resource type="Texture2D" uid="uid://17uy3mqeeg44" path="res://bg.png" id="4_ry685"]
-[ext_resource type="PackedScene" uid="uid://cqar6qexw4tfr" path="res://tree.tscn" id="5_rcm2d"]
 [ext_resource type="PackedScene" uid="uid://snoggehctvrd" path="res://upgrades/fire_rate.tscn" id="7_t1fb3"]
 [ext_resource type="PackedScene" uid="uid://clkqn6f2bhe1m" path="res://upgrades/fire_dot.tscn" id="8_jdi01"]
 [ext_resource type="PackedScene" uid="uid://c7qten550w4hb" path="res://upgrades/damage.tscn" id="8_lg65u"]
 [ext_resource type="PackedScene" uid="uid://biu3kl5mrykfv" path="res://upgrades/impact.tscn" id="9_186a7"]
 [ext_resource type="PackedScene" uid="uid://hjnuukwf8ij3" path="res://upgrades/mouse_homing.tscn" id="10_tjx0s"]
+[ext_resource type="PackedScene" uid="uid://b2ncm7apbh877" path="res://upgrades/triple_shot.tscn" id="11_hvnve"]
+[ext_resource type="PackedScene" uid="uid://pyvxpn1cg8gf" path="res://upgrades/chain.tscn" id="12_47q0f"]
+[ext_resource type="PackedScene" uid="uid://dgw2nubmexa81" path="res://upgrades/piercing.tscn" id="12_grh6f"]
+[ext_resource type="PackedScene" uid="uid://b0pgjknfvg53w" path="res://upgrades/speed.tscn" id="12_iydax"]
+[ext_resource type="PackedScene" uid="uid://dfu02oy7ehqq3" path="res://upgrades/black_hole.tscn" id="13_sfuu7"]
 
 [sub_resource type="Shader" id="Shader_b3mk2"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.0.beta2's CanvasItemMaterial.
@@ -76,45 +79,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="tree" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(384, 371)
-
-[node name="tree2" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(333, 228)
-
-[node name="tree3" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(494, 262)
-
-[node name="tree4" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(518, 425)
-
-[node name="tree5" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(618, 179)
-
-[node name="tree6" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(379, 154)
-
-[node name="tree7" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(229, 119)
-
-[node name="tree8" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(280, 106)
-
-[node name="tree9" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(183, 111)
-
-[node name="tree10" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(127, 111)
-
-[node name="tree11" parent="." instance=ExtResource("5_rcm2d")]
-position = Vector2(168, 190)
-
-[node name="Bg" type="Sprite2D" parent="."]
-modulate = Color(0.458824, 0.458824, 0.458824, 1)
-scale = Vector2(10000, 10000)
-z_index = -3
-texture = ExtResource("4_ry685")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.27451, 0.27451, 0.27451, 1)
 
@@ -136,3 +100,18 @@ other_upgrade = NodePath("../fire_dot")
 
 [node name="impact2" parent="." instance=ExtResource("10_tjx0s")]
 position = Vector2(246, 485)
+
+[node name="impact3" parent="." instance=ExtResource("11_hvnve")]
+position = Vector2(332, 509)
+
+[node name="impact4" parent="." instance=ExtResource("12_47q0f")]
+position = Vector2(443, 455)
+
+[node name="speed" parent="." instance=ExtResource("12_iydax")]
+position = Vector2(151, 309)
+
+[node name="piercing" parent="." instance=ExtResource("12_grh6f")]
+position = Vector2(150, 427)
+
+[node name="black_hole" parent="." instance=ExtResource("13_sfuu7")]
+position = Vector2(463, 360)

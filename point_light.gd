@@ -8,6 +8,7 @@ func _ready():
 func assign(shot):
 	associated_shot = shot
 	position = Vector2(associated_shot.position.x,associated_shot.position.y+20)
+	color = shot.modulate
 	
 func clear_assigned():
 	associated_shot = null

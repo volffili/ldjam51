@@ -1,6 +1,7 @@
 extends Node2D
 
 var enemy_scene = preload("res://enemy.tscn")
+var bg_tile_scene = preload("res://bg_tile.tscn")
 
 @onready var spawn_timer = Timer.new()
 
@@ -12,6 +13,12 @@ func _ready():
 	spawn_timer.connect("timeout", self.spawn)
 	add_child(spawn_timer)
 	spawn_timer.start()
+	
+	for i in range(-50, 50):
+		for j in range(-50, 50):
+			var bg_tile = bg_tile_scene.instantiate()
+			bg_tile.position = Vector2(i * 100, j * 100)
+			add_child(bg_tile)
 
 func _input(event):
 	if Input.is_action_pressed("ui_cancel"):

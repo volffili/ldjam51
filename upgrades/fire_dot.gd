@@ -3,7 +3,7 @@ extends "res://upgrades/upgrade.gd"
 var effect_scene = preload("res://upgrades/fire_dot_effect.tscn")
 
 func _on_shoot(shot):
-	shot.modulate = Color.DARK_ORANGE # TODO
+	shot.modulate *= Color.DARK_ORANGE # TODO
 
 func _on_impact(shot, enemy):
 	enemy.add_child(effect_scene.instantiate())

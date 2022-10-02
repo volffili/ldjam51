@@ -9,7 +9,7 @@ cull_mode = 2
 polygon = PackedVector2Array(-4, 5, -4, -3, -1, -5, 3, -3, 3, 5, 0, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sq8ah"]
-radius = 4.0
+radius = 5.0
 
 [node name="tree" type="Node2D"]
 script = ExtResource("1_8um2u")
@@ -33,5 +33,5 @@ texture = ExtResource("3_6rf5a")
 [node name="StaticBody2d" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="StaticBody2d"]
-position = Vector2(0, 3)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_sq8ah")

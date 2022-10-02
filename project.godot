@@ -89,4 +89,5 @@ shoot={
 
 limits/opengl/max_renderable_lights=128
 limits/opengl/max_lights_per_object=128
+environment/defaults/default_clear_color=Color(0.635294, 0.635294, 0.635294, 1)
 textures/canvas_textures/default_texture_filter=0
