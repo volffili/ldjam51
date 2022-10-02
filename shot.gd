@@ -9,6 +9,7 @@ signal shot_process
 var damage = 10
 var speed = 500
 var my_point_light
+var boom
 var duplicated_triple = false
 var duplicated_chain = false
 var ignore_enemy = null
@@ -34,17 +35,15 @@ func _on_shot_body_entered(body):
 		$GpuParticles2d.emitting = false
 		my_point_light.clear_assigned()
 		my_point_light.die()
-		my_point_light = null
-	var boom = boom_scene.instantiate()
+	boom = boom_scene.instantiate()
 	boom.position = position
 	boom.modulate = modulate
 	get_parent().add_child(boom)
 	emit_signal("impact", self, body)
 
 func _on_collision_shape_2d_tree_exited():
-	if my_point_light:
+	if is_instance_valid(my_point_light):
 		my_point_light.queue_free()
-		my_point_light.die()
 		
 func _process(delta):
 	emit_signal("shot_process", delta)

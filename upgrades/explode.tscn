@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://w8adkfy66845"]
+
+[ext_resource type="PackedScene" uid="uid://b83tn0qsgjp1d" path="res://upgrades/upgrade.tscn" id="1_7apy6"]
+[ext_resource type="Script" path="res://upgrades/explode.gd" id="2_ownkl"]
+
+[node name="explode" instance=ExtResource("1_7apy6")]
+script = ExtResource("2_ownkl")
+
+[node name="Label" parent="." index="1"]
+text = "Explode"
