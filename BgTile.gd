@@ -18,4 +18,4 @@ func _ready():
 		tile.flip_h = randi()%2
 		tile.flip_v = randi()%2
 		tile.set_texture(textures[randi()%4])
-		tile.modulate = Color(0.4+randf()/4, 0.4+randf()/4, 0.4+randf()/4)
+		tile.modulate = Color(0.4+randf()/4, 0.2+randf()/6, 0.2+randf()/6)
