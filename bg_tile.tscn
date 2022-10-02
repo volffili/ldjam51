@@ -1,17 +1,365 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbr0yrk1u3j4d"]
+[gd_scene load_steps=6 format=3 uid="uid://bbr0yrk1u3j4d"]
 
 [ext_resource type="Script" path="res://BgTile.gd" id="1_kd3st"]
 [ext_resource type="PackedScene" uid="uid://cqar6qexw4tfr" path="res://tree.tscn" id="2_qxwac"]
+[ext_resource type="Texture2D" uid="uid://2iqls6qlbi7w" path="res://sprites/leafs1.png" id="2_yfwoc"]
 [ext_resource type="Texture2D" uid="uid://17uy3mqeeg44" path="res://bg.png" id="3_oyhvs"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ufgo6"]
 
 [node name="BgTile" type="Node2D"]
 script = ExtResource("1_kd3st")
 
-[node name="tree" parent="." instance=ExtResource("2_qxwac")]
-
-[node name="Bg" type="Sprite2D" parent="."]
+[node name="bg21" type="Sprite2D" parent="."]
 modulate = Color(0.603922, 0.780392, 0.85098, 1)
 light_mask = 13
-scale = Vector2(10, 10)
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-40, -40)
+scale = Vector2(2, 2)
 z_index = -3
 texture = ExtResource("3_oyhvs")
+
+[node name="bg22" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(40, -40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg23" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(20, -40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg24" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(0, -40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg25" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-20, -40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg17" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-40, 40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg18" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-40, 20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg19" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-40, 0)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg20" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-40, -20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg9" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(40, 40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg10" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(20, 40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg11" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(40, 20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg12" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(20, 20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg13" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(0, 40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg14" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-20, 40)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg15" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(0, 20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg16" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-20, 20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg5" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(40, 0)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg6" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(20, 0)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg7" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(40, -20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg8" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(20, -20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg2" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-20, 0)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg3" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(0, -20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="bg4" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-20, -20)
+scale = Vector2(2, 2)
+z_index = -3
+texture = ExtResource("3_oyhvs")
+
+[node name="Bg1" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(12.5, -12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg9" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-12.5, -12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg5" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-12.5, 12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="tree" parent="." instance=ExtResource("2_qxwac")]
+
+[node name="Bg2" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-12.5, 37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg4" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(12.5, 12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg3" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-37.5, 12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg6" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(12.5, 37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg7" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-37.5, 37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg8" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-37.5, -12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg10" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(37.5, -12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg11" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(37.5, 12.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg12" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(37.5, 37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg13" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-37.5, -37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg14" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(-12.5, -37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg15" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(12.5, -37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
+
+[node name="Bg16" type="Sprite2D" parent="."]
+modulate = Color(0.603922, 0.780392, 0.85098, 1)
+light_mask = 13
+material = SubResource("CanvasItemMaterial_ufgo6")
+position = Vector2(37.5, -37.5)
+z_index = -3
+texture = ExtResource("2_yfwoc")
