@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bahkgg6ob7qhb"]
+[gd_scene load_steps=15 format=3 uid="uid://bahkgg6ob7qhb"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_lvlh1"]
 [ext_resource type="PackedScene" uid="uid://67xb8npteuy" path="res://player.tscn" id="2_c2ayt"]
 [ext_resource type="AudioStream" uid="uid://cua8uublchyna" path="res://20221002_Darkest_Ludum_B_loop.ogg" id="3_l3gv6"]
 [ext_resource type="PackedScene" uid="uid://d53oyq2giilk" path="res://hud.tscn" id="4_qov01"]
-[ext_resource type="PackedScene" uid="uid://b2ncm7apbh877" path="res://upgrades/triple_shot.tscn" id="5_hrocu"]
 
 [sub_resource type="Shader" id="Shader_b3mk2"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.0.beta2's CanvasItemMaterial.
@@ -193,6 +192,3 @@ autoplay = true
 bus = &"Music"
 
 [node name="HUD" parent="." instance=ExtResource("4_qov01")]
-
-[node name="impact" parent="." instance=ExtResource("5_hrocu")]
-position = Vector2(-1, -41)
