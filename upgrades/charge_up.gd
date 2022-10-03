@@ -7,7 +7,7 @@ func _on_picked():
 	player.charge_up = true
 	effect = effect_scene.instantiate()
 	player.add_child(effect)
-	
+
 func _process(delta):
 	if effect == null:
 		return

@@ -6,6 +6,8 @@
 
 [node name="freeze" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_j0c2m")
+title = "Iceball"
+subtext = "Enemies Get Frozen"
 
 [node name="Icon" parent="." index="0"]
 scale = Vector2(1, 1)

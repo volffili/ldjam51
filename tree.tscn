@@ -12,13 +12,15 @@ polygon = PackedVector2Array(-5, 1, -5, -3, -4, -4, -2, -5, 2, -5, 4, -4, 5, -3,
 radius = 5.0
 
 [node name="tree" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_8um2u")
 
 [node name="root" type="Sprite2D" parent="."]
 light_mask = 2
 texture_filter = 1
 texture_repeat = 1
-z_index = 1
+z_index = -1
+y_sort_enabled = true
 texture = ExtResource("1_teetd")
 
 [node name="LightOccluder2d" type="LightOccluder2D" parent="root"]

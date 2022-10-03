@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b12dt8k3ddsta"
+path="res://.godot/imported/LDJ22_SFX_01_Fireball med_03.ogg-d3641c68f790c1d9efac65dcd3e0bae7.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/LDJ22_SFX_01_Fireball med_03.ogg"
+dest_files=["res://.godot/imported/LDJ22_SFX_01_Fireball med_03.ogg-d3641c68f790c1d9efac65dcd3e0bae7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

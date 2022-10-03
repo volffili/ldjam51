@@ -67,7 +67,7 @@ _data = {
 "start": SubResource("Animation_oe63w")
 }
 
-[node name="PointLight2d" type="PointLight2D"]
+[node name="PointLight2d" type="PointLight2D" groups=["light"]]
 modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.5, 0.25)
 energy = 1.5

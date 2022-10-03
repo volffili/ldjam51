@@ -13,7 +13,7 @@ var textures = [
 
 func _ready():
 	var tiles = [$Bg1,$Bg2,$Bg3,$Bg4,$Bg5,$Bg6,$Bg7,$Bg8,$Bg9,$Bg10,$Bg11,$Bg12,$Bg13,$Bg14,$Bg15,$Bg16]
-	$tree.position = Vector2(randi_range(-size/2.0, size/2.0), randi_range(-size/2.0, size/2.0))
+	$tree.position = Vector2(randf_range(-size/2.0, size/2.0), randf_range(-size/2.0, size/2.0))
 	for tile in tiles:
 		tile.flip_h = randi()%2
 		tile.flip_v = randi()%2

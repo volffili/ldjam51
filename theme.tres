@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bhqtumj76hyea"]
+
+[ext_resource type="FontFile" uid="uid://pekwxkn6c024" path="res://fff-forward.regular.ttf" id="1_rmcu7"]
+
+[resource]
+default_font = ExtResource("1_rmcu7")
+default_font_size = 50
+Button/fonts/font = ExtResource("1_rmcu7")

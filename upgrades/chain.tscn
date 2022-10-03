@@ -6,6 +6,8 @@
 
 [node name="chain" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_4vmx3")
+title = "Chain Lightning"
+subtext = "Shots Jump to Nearby Enemies"
 
 [node name="Icon" parent="." index="0"]
 scale = Vector2(1, 1)

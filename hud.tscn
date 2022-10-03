@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://d53oyq2giilk"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_wsqdk"]
+[ext_resource type="Theme" uid="uid://bhqtumj76hyea" path="res://theme.tres" id="1_yrkeu"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_wsqdk")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.139
+anchor_right = 0.5
+anchor_bottom = 0.139
+offset_left = -22.0
+offset_top = -27.4
+offset_right = 21.2
+offset_bottom = 45.6
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_yrkeu")
+
+[node name="SubText" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.271
+anchor_right = 0.5
+anchor_bottom = 0.271
+offset_left = -20.0
+offset_top = -9.0
+offset_right = 20.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("1_yrkeu")
+theme_override_font_sizes/font_size = 25
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

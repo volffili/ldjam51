@@ -6,6 +6,8 @@
 
 [node name="impact" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_ajdiy")
+title = "Impact"
+subtext = "Slimes Bounce with Stronger Force"
 
 [node name="Icon" parent="." index="0"]
 scale = Vector2(1, 1)

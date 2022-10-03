@@ -6,6 +6,7 @@
 
 [node name="piercing" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_dkj1t")
+title = "Bouncy Shots"
 
 [node name="Icon" parent="." index="0"]
 scale = Vector2(1, 1)

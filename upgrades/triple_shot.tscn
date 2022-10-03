@@ -6,6 +6,7 @@
 
 [node name="impact" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_fvvm5")
+title = "Triple Shot"
 
 [node name="Icon" parent="." index="0"]
 scale = Vector2(1, 1)

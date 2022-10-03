@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b83tn0qsgjp1d"]
+[gd_scene load_steps=7 format=3 uid="uid://b83tn0qsgjp1d"]
 
 [ext_resource type="Script" path="res://upgrades/fire_rate.gd" id="1_0j2xf"]
 [ext_resource type="Texture2D" uid="uid://c3kbqaeynipx2" path="res://icon.svg" id="2_jg5tt"]
 [ext_resource type="Texture2D" uid="uid://bprmw1e3il1ct" path="res://light.png" id="3_caj74"]
+[ext_resource type="Texture2D" uid="uid://ccqqxxmqihbmy" path="res://sprites/shadow.png" id="4_e42f5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ebte"]
 light_mode = 1
@@ -37,6 +38,15 @@ shape = SubResource("RectangleShape2D_yl5ba")
 
 [node name="PointLight2d" type="PointLight2D" parent="."]
 scale = Vector2(0.2, 0.2)
+energy = 1.5
 texture = ExtResource("3_caj74")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+texture_filter = 1
+position = Vector2(0, 22)
+scale = Vector2(1.92308, 1.75)
+z_index = -1
+texture = ExtResource("4_e42f5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

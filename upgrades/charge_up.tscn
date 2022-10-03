@@ -6,6 +6,8 @@
 
 [node name="charge_up" instance=ExtResource("1_7apy6")]
 script = ExtResource("2_l34cw")
+title = "Charge Up Cast"
+subtext = "Hold and Release for Powerful Shots"
 
 [node name="Icon" parent="." index="0"]
 scale = Vector2(1, 1)

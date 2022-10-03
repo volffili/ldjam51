@@ -20,11 +20,15 @@ func shoot(direction):
 	$GpuParticles2d.rotation = direction.angle()
 	#$GpuParticles2d.process_material.scale_min = damage / 4
 	$GpuParticles2d.process_material.scale_max = max(3, damage / 2.0)
-	$GpuParticles2d.scale *= max(damage / 10, 0.8)
+	$GpuParticles2d.scale *= max(damage / 10.0, 0.8)
+	var shape = CircleShape2D.new()
+	shape.radius = sqrt(damage) / 3.1 * 10.0
+	$CollisionShape2d.set_shape(shape)
 	
-	my_point_light = point_light_scene.instantiate()
-	get_parent().add_child(my_point_light)
-	my_point_light.assign(self)
+	if len(get_tree().get_nodes_in_group("light")) < 16:
+		my_point_light = point_light_scene.instantiate()
+		get_parent().add_child(my_point_light)
+		my_point_light.assign(self)
 
 func _on_shot_body_entered(body):
 	if body == ignore_enemy:
@@ -36,8 +40,9 @@ func _on_shot_body_entered(body):
 		$CollisionShape2d.set_deferred("disabled", true)
 		$AnimationPlayer.play("hit")
 		$GpuParticles2d.emitting = false
-		my_point_light.clear_assigned()
-		my_point_light.die()
+		if is_instance_valid(my_point_light):
+			my_point_light.clear_assigned()
+			my_point_light.die()
 	boom = boom_scene.instantiate()
 	boom.position = position
 	boom.modulate = modulate

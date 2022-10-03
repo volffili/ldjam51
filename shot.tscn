@@ -1,7 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4x181naf4jx2"]
+[gd_scene load_steps=18 format=3 uid="uid://c4x181naf4jx2"]
 
 [ext_resource type="Script" path="res://shot.gd" id="1_qojlr"]
 [ext_resource type="Material" uid="uid://dcwsir8x7cj8e" path="res://shot_particle.tres" id="3_diu87"]
+[ext_resource type="AudioStream" uid="uid://cmgbi56hbfrq3" path="res://sfx/LDJ22_SFX_01_Fireball med_01.ogg" id="3_muc2e"]
+[ext_resource type="AudioStream" uid="uid://dmiutir8hbo8s" path="res://sfx/LDJ22_SFX_01_Fireball_big_01.wav" id="3_spa0u"]
+[ext_resource type="AudioStream" uid="uid://kifr63ul8h10" path="res://sfx/LDJ22_SFX_01_Fireball_big_02.wav" id="4_k3fj7"]
+[ext_resource type="AudioStream" uid="uid://djoe4p87oho5k" path="res://sfx/LDJ22_SFX_01_Fireball med_02.ogg" id="4_tyyt1"]
+[ext_resource type="AudioStream" uid="uid://dv44l24orodhm" path="res://sfx/LDJ22_SFX_01_Fireball_big_03.wav" id="5_8nmxw"]
+[ext_resource type="AudioStream" uid="uid://b12dt8k3ddsta" path="res://sfx/LDJ22_SFX_01_Fireball med_03.ogg" id="5_txpi1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vjgv0"]
 friction = 0.0
@@ -57,7 +63,31 @@ _data = {
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sor1f"]
 light_mode = 1
 
-[node name="Shot" type="RigidBody2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dkr67"]
+streams_count = 3
+playback_mode = 1
+random_pitch = 1.43
+random_volume_offset_db = 2.09
+stream_0/stream = ExtResource("3_spa0u")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_k3fj7")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_8nmxw")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hmk8q"]
+streams_count = 3
+playback_mode = 1
+random_pitch = 1.43
+random_volume_offset_db = 2.09
+stream_0/stream = ExtResource("3_muc2e")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_tyyt1")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_txpi1")
+stream_2/weight = 1.0
+
+[node name="Shot" type="RigidBody2D" groups=["shot"]]
 collision_layer = 4
 collision_mask = 2
 mass = 0.3
@@ -83,6 +113,15 @@ amount = 100
 lifetime = 0.2
 visibility_rect = Rect2(-200, -200, 400, 400)
 process_material = ExtResource("3_diu87")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_dkr67")
+bus = &"SFX"
+
+[node name="AudioStreamPlayerSmall" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_hmk8q")
+autoplay = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_shot_body_entered"]
 [connection signal="tree_exited" from="CollisionShape2d" to="." method="_on_collision_shape_2d_tree_exited"]
