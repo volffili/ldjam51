@@ -1,8 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://2slefh3k5bgm"]
+[gd_scene load_steps=26 format=3 uid="uid://2slefh3k5bgm"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_c5ohb"]
 [ext_resource type="Texture2D" uid="uid://cwyaljy18rcjb" path="res://sprites/slime-Sheet.png" id="2_a8mwb"]
 [ext_resource type="Texture2D" uid="uid://ccqqxxmqihbmy" path="res://sprites/shadow.png" id="3_03bpr"]
+[ext_resource type="AudioStream" uid="uid://gaceb8uy2mla" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_01.wav" id="4_xts6l"]
+[ext_resource type="AudioStream" uid="uid://dp778bf61jsp8" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_02.wav" id="5_c4h88"]
+[ext_resource type="AudioStream" uid="uid://dubt6bv3mhx7h" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_03.wav" id="6_ifoi6"]
+[ext_resource type="AudioStream" uid="uid://bk1fnsekry72l" path="res://sfx/LDJ22_SFX_05_Slime_Small_hit.wav" id="7_tva5t"]
+[ext_resource type="AudioStream" uid="uid://62cb53g76sd2" path="res://sfx/LDJ22_SFX_05_Slime_Small_dead.wav" id="8_f8mrt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w7l53"]
 friction = 0.0
@@ -114,6 +119,26 @@ _data = {
 "move": SubResource("Animation_xw2jk")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dy5nu"]
+streams_count = 3
+playback_mode = 1
+stream_0/stream = ExtResource("4_xts6l")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_c4h88")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_ifoi6")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qcjwf"]
+streams_count = 1
+stream_0/stream = ExtResource("7_tva5t")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tn8lc"]
+streams_count = 1
+stream_0/stream = ExtResource("8_f8mrt")
+stream_0/weight = 1.0
+
 [node name="Enemy" type="RigidBody2D" groups=["enemy"]]
 collision_layer = 2
 collision_mask = 7
@@ -152,5 +177,18 @@ shape = SubResource("CircleShape2D_s5w4n")
 libraries = {
 "": SubResource("AnimationLibrary_85q4d")
 }
+
+[node name="WalkAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_dy5nu")
+volume_db = 5.683
+bus = &"SFX"
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_qcjwf")
+volume_db = 5.503
+
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_tn8lc")
+volume_db = 5.503
 
 [connection signal="body_entered" from="." to="." method="_on_enemy_body_entered"]

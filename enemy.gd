@@ -18,8 +18,10 @@ func start():
 
 func hit(dmg):
 	hp -= dmg
+	$HitAudio.play()
 	if hp <= 0 and not died:
 		died = true
+		$DeathAudio.play()		
 		$CollisionShape2d.set_deferred("disabled", true)
 		$AnimationPlayer.play("death")
 		
@@ -40,6 +42,7 @@ func move():
 	var direction = (get_node("/root/Game/player").global_position - self.global_position).normalized()
 	apply_force(Vector2(direction.x,direction.y * (abs(cos(direction.angle()))/2.0+0.75))*speed)
 	if not died:
+		$WalkAudio.play()
 		$AnimationPlayer.play("move")
 
 
