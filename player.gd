@@ -10,8 +10,12 @@ var charge_up = false
 var charge_time = 0.0
 var recoil = Vector2.ZERO
 var shake_amount = 0.0
+var dead = false
 
 func _physics_process(delta):
+	if dead:
+		return
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var horizontal = Input.get_axis("left", "right")
@@ -27,6 +31,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _process(delta):
+	if dead:
+		return
+
 	reload_time_left -= delta
 	if Input.is_action_pressed("shoot") and reload_time_left <= 0:
 		if charge_up:
@@ -35,10 +42,11 @@ func _process(delta):
 			shoot()
 			reload_time_left = reload_time
 	elif charge_up and charge_time > 0:
-		shoot(min(1 + (charge_time / reload_time), 5))
+		shoot(min(1 + (charge_time / reload_time) * 2, 10))
 		charge_time = 0
 		reload_time_left = reload_time
 		
+	shake_amount = min(shake_amount, 8.0)
 	get_node("Camera2d").set_offset(Vector2(
 		randf_range(-1.0, 1.0) * shake_amount,
 		randf_range(-1.0, 1.0) * shake_amount
@@ -59,3 +67,11 @@ func shoot(dmg = 1):
 	shot.shoot(get_global_mouse_position() - global_position)
 	recoil += (global_position - get_global_mouse_position()).normalized() * log(shot.damage) * 10
 	shake_amount += shot.damage / 5.0
+	
+func death():
+	if dead:
+		return
+	dead = true
+	$DeathAudio.play()
+	get_node("/root/Game/HUD").show_text("", "")
+	get_node("/root/Game/HUD/death").visible = true

@@ -10,8 +10,9 @@ func _on_impact(shot, enemy):
 	enemy.speed = 0
 	enemy.linear_velocity = Vector2.ZERO
 	enemy.get_node("Icon").playing = false
-	await get_tree().create_timer(2.0).timeout
-	if is_instance_valid(enemy):
-		enemy.modulate = orig_m
-		enemy.speed = orig_s
-		enemy.get_node("Icon").playing = true
+	await get_tree().create_timer(4.0).connect("timeout", func():
+		if is_instance_valid(enemy):
+			enemy.modulate = orig_m
+			enemy.speed = orig_s
+			enemy.get_node("Icon").playing = true
+	)

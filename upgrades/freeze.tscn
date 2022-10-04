@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://upgrades/freeze.gd" id="2_j0c2m"]
 [ext_resource type="Texture2D" uid="uid://ugaq7uxxi3up" path="res://sprites/upgrades/cube.png" id="3_3fnfn"]
 
-[node name="freeze" instance=ExtResource("1_7apy6")]
+[node name="freeze" groups=["freeze"] instance=ExtResource("1_7apy6")]
 script = ExtResource("2_j0c2m")
 title = "Iceball"
 subtext = "Enemies Get Frozen"

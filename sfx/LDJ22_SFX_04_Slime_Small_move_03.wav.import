@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dubt6bv3mhx7h"
+uid="uid://dta0bp6ba2i5p"
 path="res://.godot/imported/LDJ22_SFX_04_Slime_Small_move_03.wav-fcc639a33059ac172d3f84ff62481430.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=1
+edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0

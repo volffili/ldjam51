@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://upgrades/mouse_homing.gd" id="2_g8sin"]
 [ext_resource type="Texture2D" uid="uid://b5it70u5w6mr3" path="res://sprites/upgrades/homing.png" id="3_bg4sl"]
 
-[node name="impact" instance=ExtResource("1_7apy6")]
+[node name="impact" groups=["homing"] instance=ExtResource("1_7apy6")]
 script = ExtResource("2_g8sin")
 title = "Homing"
 subtext = "Shots Follow the Mouse Cursor"

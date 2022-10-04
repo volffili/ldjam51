@@ -16,6 +16,7 @@ func _on_body_entered(p):
 	get_node("/root/Game/HUD").show_text(title, subtext)
 	player = p
 	player.connect("shot_created", self._on_shoot_base)
+	player.get_node("UpgradeAudio").play()
 	$CollisionShape2d.set_deferred("disabled", true)
 	hide()
 	if other_upgrade:

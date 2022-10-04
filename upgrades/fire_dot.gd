@@ -14,8 +14,9 @@ func _on_impact(shot, enemy):
 	timer.connect("timeout", func(): enemy.hit(1))
 	enemy.add_child(timer)
 	timer.start()
-	await get_tree().create_timer(5.0).timeout
-	if is_instance_valid(timer):
-		timer.queue_free()
-	if is_instance_valid(effect):
-		effect.queue_free()
+	await get_tree().create_timer(5.0).connect("timeout", func():
+		if is_instance_valid(timer):
+			timer.queue_free()
+		if is_instance_valid(effect):
+			effect.queue_free()
+	)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://67xb8npteuy"]
+[gd_scene load_steps=16 format=3 uid="uid://67xb8npteuy"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7ydma"]
 [ext_resource type="Texture2D" uid="uid://bmpuicpqufk6n" path="res://sprites/player.png" id="2_7h66h"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://5h288ougsct8" path="res://sfx/LDJ22_SFX_03_Step_02.ogg" id="5_becpj"]
 [ext_resource type="AudioStream" uid="uid://cdqlm4qao87hj" path="res://sfx/LDJ22_SFX_03_Step_03.ogg" id="6_iuy84"]
 [ext_resource type="Texture2D" uid="uid://ccqqxxmqihbmy" path="res://sprites/shadow.png" id="7_t0hf0"]
+[ext_resource type="AudioStream" uid="uid://6wu38gauy1fe" path="res://sfx/LDJ22_SFX_11_Upgrade.wav" id="8_oe5eb"]
+[ext_resource type="AudioStream" uid="uid://bewhp03lotfyb" path="res://sfx/LDJ22_SFX_07_Character_dead.wav" id="9_xegjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wu6a8"]
 radius = 9.05539
@@ -241,3 +243,11 @@ position = Vector2(0, 14)
 scale = Vector2(0.846154, 0.75)
 z_index = -1
 texture = ExtResource("7_t0hf0")
+
+[node name="UpgradeAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_oe5eb")
+volume_db = 13.757
+
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_xegjw")
+volume_db = 6.603

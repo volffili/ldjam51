@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://62cb53g76sd2"
+uid="uid://d4b7gm43yr717"
 path="res://.godot/imported/LDJ22_SFX_05_Slime_Small_dead.wav-2317dfb50d862b9c7dc5c984b4115cc1.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=1
+edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0

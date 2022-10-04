@@ -30,6 +30,23 @@ var hp_mul = 1.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	
+	for i in range(-map_size, map_size):
+		for j in range(-map_size, map_size):
+			var bg_tile
+			if i == -map_size or i == map_size-1 or j == -map_size or j == map_size-1:
+				bg_tile = wall_tile_scene.instantiate()
+			else:
+				bg_tile = bg_tile_scene.instantiate()
+			bg_tile.position = Vector2(i * 100, j * 100)
+			add_child(bg_tile)
+
+func _on_play_pressed():
+	$HUD/Intro.visible = false
+	
+	$AnimationPlayer.play("start")
+	$AudioStreamPlayer.play()
+
 	spawn_timer.one_shot = false
 	spawn_timer.wait_time = 2.0
 	spawn_timer.connect("timeout", self.spawn)
@@ -42,16 +59,6 @@ func _ready():
 	add_child(upgrade_timer)
 	upgrade_timer.start()
 	upgrade_timer.wait_time = 20.0
-	
-	for i in range(-map_size, map_size):
-		for j in range(-map_size, map_size):
-			var bg_tile
-			if i == -map_size or i == map_size-1 or j == -map_size or j == map_size-1:
-				bg_tile = wall_tile_scene.instantiate()
-			else:
-				bg_tile = bg_tile_scene.instantiate()
-			bg_tile.position = Vector2(i * 100, j * 100)
-			add_child(bg_tile)
 
 func _input(event):
 	if Input.is_action_pressed("ui_cancel"):
@@ -107,8 +114,19 @@ var upgrades = [
 	speed_scene,
 	speed_scene,
 ]
-func random_upgrade():
-	return upgrades[randi() % len(upgrades)]
+func random_upgrade(other=null):
+	var u
+	for i in range(5):
+		u = upgrades[randi() % len(upgrades)]
+		if u == other:
+			continue
+		if (u == piercing_scene and len(get_tree().get_nodes_in_group("bounce"))) or \
+			(u == freeze_scene and len(get_tree().get_nodes_in_group("freeze"))) or \
+			(u == charge_up_scene and len(get_tree().get_nodes_in_group("charge_up"))) or \
+			(u == mouse_homing_scene and len(get_tree().get_nodes_in_group("homing"))):
+			continue
+		return u
+	return u
 
 func spawn_upgrades():
 	$HUD.show_text("Choose an Upgrade", "")
@@ -121,9 +139,7 @@ func spawn_upgrades():
 	u1.position.y = max(u1.position.y, -map_size * 100 + 80)
 	add_child(u1)
 	
-	var u2_scene = random_upgrade()
-	if u2_scene == u1_scene:
-		u2_scene = random_upgrade()
+	var u2_scene = random_upgrade(u1_scene)
 	var u2 = u2_scene.instantiate()
 	u2.position = $player.position + Vector2(50, -100)
 	u2.position.x = min(u2.position.x, map_size * 100 - 170)
@@ -134,7 +150,7 @@ func spawn_upgrades():
 	u2.other_upgrade = u1
 
 func start_tank_spawn():
-	$HUD.show_text("Guardians Spawn", "Enemy Upgrade")
+	$HUD.show_text("Guardians Spawn", "Enemy Upgrade", Color.ORANGE_RED)
 	tank_timer.one_shot = false
 	tank_timer.wait_time = 5.0
 	tank_timer.connect("timeout", self.tank_spawn)
@@ -142,7 +158,7 @@ func start_tank_spawn():
 	tank_timer.start()
 	
 func start_charger_spawn():
-	$HUD.show_text("Chargers Spawn", "Enemy Upgrade")
+	$HUD.show_text("Chargers Spawn", "Enemy Upgrade", Color.ORANGE_RED)
 	charger_timer.one_shot = false
 	charger_timer.wait_time = 4.0
 	charger_timer.connect("timeout", self.charger_spawn)
@@ -150,21 +166,53 @@ func start_charger_spawn():
 	charger_timer.start()
 	
 func double_spawn_rate():
-	$HUD.show_text("More Slimes", "Enemy Upgrade")
+	$HUD.show_text("More Slimes", "Enemy Upgrade", Color.ORANGE_RED)
 	spawn_timer.wait_time /= 2.0
 	
 func double_tank_spawn_rate():
-	$HUD.show_text("More Guardians", "Enemy Upgrade")
+	$HUD.show_text("More Guardians", "Enemy Upgrade", Color.ORANGE_RED)
 	tank_timer.wait_time /= 2.0
 	
 func triple_charger_spawn_rate():
-	$HUD.show_text("More Chargers", "Enemy Upgrade")
+	$HUD.show_text("More Chargers", "Enemy Upgrade", Color.ORANGE_RED)
 	charger_timer.wait_time /= 3.0
 	
 func enable_splitting():
-	$HUD.show_text("Slimes Split", "Enemy Upgrade")
+	$HUD.show_text("Slimes Split", "Enemy Upgrade", Color.ORANGE_RED)
 	should_split = true
 	
 func increase_hp():
-	$HUD.show_text("Higher Health", "Enemy Upgrade")
+	$HUD.show_text("Higher Health", "Enemy Upgrade", Color.ORANGE_RED)
 	hp_mul *= 1.5
+
+func slime_ambush():
+	$HUD.show_text("Slime Ambush", "Enemy Upgrade", Color.ORANGE_RED)	
+	for i in range(40):
+		spawn()
+
+func big_ambush():
+	$HUD.show_text("Slime Ambush", "Enemy Upgrade", Color.ORANGE_RED)	
+	for i in range(60):
+		spawn()
+	for i in range(10):
+		tank_spawn()
+	for i in range(10):
+		charger_spawn()
+		
+func biggest_ambush():
+	$HUD.show_text("Slime Ambush", "Enemy Upgrade", Color.ORANGE_RED)	
+	for i in range(100):
+		spawn()
+	for i in range(30):
+		tank_spawn()
+	for i in range(30):
+		charger_spawn()
+
+func win():
+	$HUD.win()
+	spawn_timer.stop()
+	tank_timer.stop()
+	charger_timer.stop()
+	upgrade_timer.stop()
+	for e in get_tree().get_nodes_in_group("enemy"):
+		e.queue_free()

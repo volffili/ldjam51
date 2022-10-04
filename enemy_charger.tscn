@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://enemy.gd" id="1_c5ohb"]
 [ext_resource type="Texture2D" uid="uid://cwyaljy18rcjb" path="res://sprites/slime-Sheet.png" id="2_a8mwb"]
 [ext_resource type="Texture2D" uid="uid://ccqqxxmqihbmy" path="res://sprites/shadow.png" id="3_xh87r"]
-[ext_resource type="AudioStream" uid="uid://gaceb8uy2mla" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_01.wav" id="4_2hikc"]
-[ext_resource type="AudioStream" uid="uid://dp778bf61jsp8" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_02.wav" id="5_6efcl"]
-[ext_resource type="AudioStream" uid="uid://dubt6bv3mhx7h" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_03.wav" id="6_74f07"]
-[ext_resource type="AudioStream" uid="uid://bk1fnsekry72l" path="res://sfx/LDJ22_SFX_05_Slime_Small_hit.wav" id="7_t0x03"]
-[ext_resource type="AudioStream" uid="uid://62cb53g76sd2" path="res://sfx/LDJ22_SFX_05_Slime_Small_dead.wav" id="8_o13mu"]
+[ext_resource type="AudioStream" uid="uid://se3dd1d2en43" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_01.wav" id="4_2hikc"]
+[ext_resource type="AudioStream" uid="uid://btm4x0kuuh6j4" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_02.wav" id="5_6efcl"]
+[ext_resource type="AudioStream" uid="uid://dta0bp6ba2i5p" path="res://sfx/LDJ22_SFX_04_Slime_Small_move_03.wav" id="6_74f07"]
+[ext_resource type="AudioStream" uid="uid://bdk48bll7o3dy" path="res://sfx/LDJ22_SFX_05_Slime_Small_hit.wav" id="7_t0x03"]
+[ext_resource type="AudioStream" uid="uid://d4b7gm43yr717" path="res://sfx/LDJ22_SFX_05_Slime_Small_dead.wav" id="8_o13mu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w7l53"]
 friction = 0.0

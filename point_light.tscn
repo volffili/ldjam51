@@ -58,7 +58,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.8, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [1.5, 1.5, 0.0]
+"values": [2.0, 2.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lqyxx"]
@@ -69,8 +69,8 @@ _data = {
 
 [node name="PointLight2d" type="PointLight2D" groups=["light"]]
 modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.5, 0.25)
-energy = 1.5
+scale = Vector2(0.25, 0.125)
+energy = 0.0
 range_item_cull_mask = 3
 shadow_enabled = true
 shadow_item_cull_mask = 0

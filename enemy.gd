@@ -18,10 +18,11 @@ func start():
 
 func hit(dmg):
 	hp -= dmg
-	$HitAudio.play()
+	if dmg > 5:
+		$HitAudio.play()
 	if hp <= 0 and not died:
 		died = true
-		$DeathAudio.play()		
+		$DeathAudio.play()
 		$CollisionShape2d.set_deferred("disabled", true)
 		$AnimationPlayer.play("death")
 		
@@ -49,4 +50,6 @@ func move():
 func _on_enemy_body_entered(body):
 	if not body.is_in_group("player"):
 		return
-	get_node("/root/Game/player/DeathLabel").visible = true
+	if speed == 0:
+		return
+	body.death()

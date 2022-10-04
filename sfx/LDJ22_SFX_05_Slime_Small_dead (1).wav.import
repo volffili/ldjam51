@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6juohy3cyrc8"
+path="res://.godot/imported/LDJ22_SFX_05_Slime_Small_dead (1).wav-8a0b98d5a72192c7ba106a8c434a0801.sample"
+
+[deps]
+
+source_file="res://sfx/LDJ22_SFX_05_Slime_Small_dead (1).wav"
+dest_files=["res://.godot/imported/LDJ22_SFX_05_Slime_Small_dead (1).wav-8a0b98d5a72192c7ba106a8c434a0801.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
